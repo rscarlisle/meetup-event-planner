@@ -1,1 +1,1 @@
-# meetup-event-planner
+# Meetup Event Planner
