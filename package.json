@@ -1,0 +1,22 @@
+{
+  "name": "meetup_event_planner",
+  "version": "1.0.0",
+  "description": "event planner for meetups",
+  "main": "app.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rscarlisle/meetup-event-planner.git"
+  },
+  "author": "Randy Carlisle <cisolutionsinc@gmail.com> (http://randallcarlisle.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rscarlisle/meetup-event-planner/issues"
+  },
+  "homepage": "https://github.com/rscarlisle/meetup-event-planner#readme"
+}

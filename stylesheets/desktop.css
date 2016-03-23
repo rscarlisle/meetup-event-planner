@@ -1,0 +1,67 @@
+/* -------------------------------------
+			COLOR GUIDE
+
+GOLD:
+WHITE:
+GREY:
+BLACK
+--------------------------------------- */				
+
+/* -------------------------------------
+			GLOBAL STYLES
+--------------------------------------- */	
+
+/* -------------------------------------
+			LOGO STYLES
+--------------------------------------- */
+.logo {
+
+}		
+
+/* -------------------------------------
+			MAIN NAVIGATON STYLES
+--------------------------------------- */	
+.main-navigation ul {
+	padding-left: 10;
+}
+
+.main-navigation li {
+	list-style: none;
+	text-align: center;
+}
+
+.main-navigation a:hover {
+	color: rgb(255,255,255);
+	transition: .5s color;
+	background: rgba(62,61,61,0.51);
+}
+
+/* -------------------------------------
+			GLOBAL STYLES
+--------------------------------------- */			
+
+/* -------------------------------------
+			GLOBAL FOOTER STYLES
+--------------------------------------- */
+footer {
+
+}
+
+@media only screen and (min-width: 961px) {
+
+header, nav, .row, footer {
+	max-width: 941px;
+	margin: 0, auto;
+}
+
+ nav ul li a {
+	transition: background .3s linear;
+ }
+
+ nav ul li a:hover {
+ 	background-color: #ff7200;
+ }
+
+} /* end of media query */
+
+	

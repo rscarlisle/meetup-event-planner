@@ -1,0 +1,132 @@
+/* Prevents iPhone from resizing, ie landscape/portrait modes */
+html { -webkit-text-size-adjust: none; }
+
+/* -------- apply a natural box layout model to all elements --------- */
+* { box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; }
+
+/* ----- BODY ----- */
+body { 
+	font-size: 16px;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300; /* also loaded 600 for bold */
+}
+
+h1 {
+	/*color: red;*/
+}
+
+/* ----- HEADER ----- */
+#headerWrapper {
+	background-color: #3B4044;
+}
+
+header {
+	padding: 1em 2% .5em 2%;
+}
+
+header h1 {
+	font-size: 2.1em;
+	font-weight: 300;
+	color: #ddd;
+	margin-top: .75em;
+}
+
+header h2 {
+	font-size: .9em;
+	font-weight: 300;
+	font-style: italic;
+	color: #ddd;
+	margin-top: .75em;
+}
+
+/* ------- NAVIGATION STUFF HERE ------ */
+#navWrapper {
+	background-color: #e61b10;
+	padding: .75em 2%;
+}
+
+ul#myNav {
+	display: none;
+}
+
+nav ul {
+	border: 1px #ccc solid;
+	border-radius: .5em;
+	margin: .5em 2%;
+	background-color: rgba(255,255,255,0.8);
+
+	/* --- original styling --- */
+	padding: 1em 0;
+}
+
+nav ul li {
+
+	/* --- original styling --- */
+	margin: 0 2%;
+	width: 46%;
+	float: left;
+}
+
+nav ul li a {
+	/*display: block;
+	text-align: center;
+	padding: .6em;
+	border-top: 1px #ccc solid;
+	color: #000;
+	text-decoration: none;
+	font-weight: 600;*/
+
+	/* --- original styling --- */	
+	display: block;
+	text-align: center;
+	font-weight: 600;
+	text-decoration: none;
+	color: #000;
+	background-color: rgba(0,0,0,0.15);
+	border-top: 1px #ccc solid;
+	margin: .2em 0;
+	padding: .6em 0;
+	border-radius: 1em;
+	/* box-shadow: 1px 1px 4px #000;  button 3d look; opt'l */
+}
+
+nav ul li:first-child a {
+	border-top: none;
+}
+
+nav ul li.active a {
+	background-color: rgba(0,0,0,0.4);	
+	/*color: #ff7200;*/
+}
+
+button#showPhoneNav {
+	color: #fff;
+	font-weight: 600;
+	display: block;
+	border: 1px solid #222;
+	border-radius: 1.5em;
+	background-color: rgba(0,0,0,0.6);
+	width: 100%;
+	padding: .75em 0;
+}
+
+
+
+/* ------- FOOTER STUFF HERE ------ */
+
+
+/* ------- OTHER STUFF HERE ------ */
+.clearfix:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+
+
+
+
+
+
+
+
