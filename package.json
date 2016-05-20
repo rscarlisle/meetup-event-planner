@@ -18,5 +18,41 @@
   "bugs": {
     "url": "https://github.com/rscarlisle/meetup-event-planner/issues"
   },
-  "homepage": "https://github.com/rscarlisle/meetup-event-planner#readme"
+  "homepage": "https://github.com/rscarlisle/meetup-event-planner#readme",
+  "devDependencies": {
+    "beeper": "1.1.0",
+    "bootstrap": "3.3.6",
+    "browser-sync": "2.11.2",
+    "browserify": "13.0.0",
+    "connect": "3.4.1",
+    "del": "2.2.0",
+    "font-awesome": "4.5.0",
+    "google-fonts": "1.0.0",
+    "gulp": "github:gulpjs/gulp#4.0",
+    "gulp-autoprefixer": "3.1.0",
+    "gulp-browserify": "0.5.1",
+    "gulp-concat": "2.6.0",
+    "gulp-jasmine-phantom": "3.0.0",
+    "gulp-jscs": "3.0.2",
+    "gulp-jshint": "2.0.0",
+    "gulp-less": "3.0.5",
+    "gulp-less-watcher": "0.5.0",
+    "gulp-load-plugins": "1.2.0",
+    "gulp-nodemon": "2.0.6",
+    "gulp-plumber": "1.1.0",
+    "gulp-rename": "1.2.2",
+    "gulp-sourcemaps": "1.6.0",
+    "gulp-uglify": "1.5.3",
+    "gulp-util": "3.0.7",
+    "jquery": "2.2.2",
+    "jquery-validation": "1.15.0",
+    "jshint": "2.9.1",
+    "jshint-stylish": "2.1.0",
+    "phantomjs-prebuilt": "2.1.7",
+    "serve-static": "1.10.2",
+    "vinyl-source-stream": "1.1.0"
+  },
+  "dependencies": {
+    "bower": "1.7.7"
+  }
 }

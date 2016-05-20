@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<!-- add support library for latest version of jQuery (for Bootstrap's JavaScript plugins)-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+</head>
+<body>
+	
+
+<form id="tab" action="" method="GET" onsubmit="return onsubmitform();">
+  <div class="form-group">
+    <label>Date Panne</label>
+    <input required type="datetime-local" name="datePanne" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label>Date Maintenance </label>
+    <input required type="datetime-local" name="dateMaint" class="form-control">
+  </div>
+
+  <div class="btn-toolbar list-toolbar">
+    <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Save</button>
+    <input type="reset" class="btn btn-danger">
+  </div>
+</form>
+
+<script>
+  function onsubmitform() {
+    var dateMaint = new Date($('input[name="dateMaint"]').val()); // or Date.parse(...)
+    var datePanne = new Date($('input[name="datePanne"]').val()); // or Date.now()
+    debugger;
+    if (dateMaint.getTime() < datePanne.getTime()) {
+      alert("failed validation");
+      return false;
+    }
+  }
+
+</script>
+</body>
+</html>

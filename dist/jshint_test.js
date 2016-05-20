@@ -1,0 +1,1 @@
+var myArray=[1,3,5,7,2,9,8,6],sum=15,i,j=0;for(i=0;i<=myArray.length;i++)for(j=0;j<=myArray.length;j++)myArray[i]+myArray[j]===sum&&console.log(myArray[i]+" + "+myArray[j]+" === "+sum);

@@ -5,29 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Create Your Meetup</title>
 
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-
-	<!-- <link href="./css/bootstrap.min.css" rel="stylesheet" media="screen"> -->
-	<link href="./css/bootstrap-datetimepicker.css" rel="stylesheet" media="screen">
-
-    <!-- add support library for latest version of jQuery (for Bootstrap's JavaScript plugins)-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-
-
-	<script type="text/javascript" src="./jquery-2.2.0.js" charset="UTF-8"></script>
-	<script type="text/javascript" src="./bootstrap-datetimepicker.js" charset="UTF-8"></script>
-
-	<!-- jQuery Validation Plugin - both local and CDN links - 2/10/2016 -->
-	<script type="text/javascript" src="./jquery.validate.js"></script>
-
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>  
-
-	<!-- enhance-login -->
+	<link rel='stylesheet' href="../node_modules/font-awesome/css/font-awesome.min.css">
+    <link rel='stylesheet' href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+	<script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../node_modules/jquery-validation/dist/jquery.validate.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="../stylesheets/new_event.css">
-  	<!-- // <script src="../js/smoothscroll.js"></script> -->
 
 </head>
 
@@ -44,10 +27,10 @@
       <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
           <!-- <li><a href="../index.html">Home</a></li> -->
+          <li class=""><a href="../account/index.html">Home</a></li>
           <li><a href="../account/register.html">Register</a></li>
-          <li class=""><a href="../account/login.html">Login</a></li>
           <li><a href="../events/new_event.html">Create Event</a></li>
-          <!-- <li><a href="../events/events.html">Events</a></li> -->
+          <li><a href="../events/events.html">Events</a></li>
           <!-- <li><a href="../account/profile.html">Profile</a></li> -->
           <!-- <li><a href="../events/invitation_form.html">Create Invitations</a></li>           -->
         </ul>
@@ -56,16 +39,16 @@
   </div><br /><br />
 
 <section class="inputs">
-	<form action="./action_page.js" method="post">
+	<form action="./events.html" method="post" onsubmit="return onsubmitform();">
 		<div>
 			<ul>
 				<li style="display:none"></li>
 			</ul>
 		</div>
 		<div id="register">
-			<div class="container" style=color:#fff>
+			<div class="container">
 				<div class="col-lg-12">
-					<h1>Create Your Meetup</h1>
+					<h1 style=color:#fff>Create Your Meetup</h1>
 				</div>
 				<div class="col-lg-5" style=color:#fff>
 					<h3>A simple 4 step process for creating your event.</h3>
@@ -79,75 +62,91 @@
 								<li style="display:none"></li>
 							</ul>
 						</div>
+
 						<div class="form-group">
-							<!-- Split button -->
-							<div class="btn-group">
-							  <button type="button" class="btn btn-primary">Event Type</button>
-							  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							    <span class="caret"></span>
-							    <span class="sr-only">Toggle Dropdown</span>
-							  </button>
-							  <ul class="dropdown-menu">
-							    <li><a href="#">Party</a></li>
-							    <li><a href="#">Meeting</a></li>
-							    <li><a href="#">Political</a></li>
-							    <li role="separator" class="divider"></li>
-							    <li><a href="#">Cultural</a></li>
-							  </ul>
-							</div>
-	        			</div>
+						  <label style=color:#fff>Enter Event type:</label>
+						  <input type="text" list="EventType" name="EventType" autofocus placeholder="event type">
+						  <datalist id="EventType" required>
+						  	<select>
+							    <option value="Party">
+							    <option value="Meeting">
+							    <option value="Political">
+							    <option value="Organizer">
+							    <option value="Dance">
+						    <select>
+						  </datalist>
+						  <!-- <input type="submit"> -->
+						</div>
+
+
 						<div class="form-group" style=color:#fff>
 	          				<label for="EventName">Event Name</label>
-	          				<input class="form-control" data-val="true" data-val-required="The Event name field is required." id="EventName" name="EventName" type="text" value="" placeholder="event name" autocomplete="EventName"/>
+	          				<input class="form-control" data-val="true" data-val-required="The Event name field is required." id="EventName" name="EventName" type="text" value="" placeholder="event name" autocomplete="on" required/>
 	        			</div>	
-	        			<div class="container">
-						    <div class="row">
-						        <div class='col-sm-6'>
-						            <div class="form-group">
-						                <div class='input-group date' id='StarttDateTime'>
-						                    <input type='text' class="form-control" placeholder="start - date/time" />
-						                    <span class="input-group-addon">
-						                        <span class="glyphicon glyphicon-calendar"></span>
-						                    </span>
-						                </div>
-						            </div>
-						        </div>
-						        <script type="text/javascript">
-						            $(function () {
-						                $('#StarttDateTime').datetimepicker('show');
-						            });
-						        </script>
-						    </div>
+		<div class="container">
+		    <div class="row">
+		        <div class='col-sm-6'>
+		            <div class="form-group">
+		                <div class='input-group date' id='StartDateTime'>
+		                    <label style=color:#fff>Start Date/Time:</label>
+		                    <input required type='datetime-local' name='startdate' id='my-start-date' placeholder="start - date/time" />
+		                    
+
+
+		                    <!-- <span class="input-group-addon">
+		                        <span class="glyphicon glyphicon-calendar"></span>
+		                    </span> -->
+		                </div>
+		            </div>
+		        </div>
+		    </div>
 						</div>
 	        			<div class="container">
 						    <div class="row">
 						        <div class='col-sm-6'>
 						            <div class="form-group">
 						                <div class='input-group date' id='EndDateTime'>
-						                    <input type='text' class="form-control" placeholder="end - date/time"/>
-						                    <span class="input-group-addon">
+						                    <label style=color:#fff>End Date/Time:</label>
+						                    <input required type='datetime-local' name='enddate' id='my-end-date' class="form-control" placeholder="end - date/time"/>
+						                    <!-- <span class="input-group-addon">
 						                        <span class="glyphicon glyphicon-calendar"></span>
-						                    </span>
+						                    </span> -->
 						                </div>
 						            </div>
 						        </div>
-						        <script type="text/javascript">
-						            $(function () {
-						                $('#EndDateTime').datetimepicker();
-						            });
-						        </script>
 						    </div>
 						</div>						
-
 	        			<div class="form-group" style=color:#fff>
 	          				<label for="EventDescription">Event Description</label>
-	          				<input class="form-control" data-val="true" data-val-required="The Event Description name field is required." id="EventDescription" name="EventDescription" type="text" value="" placeholder="event description" />
+	          				<input class="form-control" data-val="true" data-val-required="The Event Description name field is required." id="EventDescription" name="EventDescription" type="text" value="" placeholder="event description" autocomplete="on"/>
 	        			</div>
 						<div class="form-group" style=color:#fff>
 	          				<label for="EventLocation">Event Location</label>
-	          				<input class="form-control" data-val="true" data-val-required="The Event Location name field is required." id="EventLocation" name="EventLocation" type="text" placeholder="foursquare-api" value="" />
-	        			</div>	        			
-						<button type="submit" class="btn btn-large btn-success">CREATE</button><br />
+	          				<input class="form-control" data-val="true" data-val-required="The Event Location name field is required." id="EventLocation" name="EventLocation" type="text" placeholder="foursquare-api" value="" autocomplete="on" required/>
+	        			</div>
+	        			<div class="form-group" style=color:#fff>
+	          				<label for="EventHost">Event Host</label>
+	          				<input class="form-control" data-val="true" data-val-required="The Event Host name field is required." id="EventHost" name="EventHost" type="text" value="" placeholder="event host" autocomplete="on"/>
+	        			</div>
+	        			<div class="form-group" style=color:#fff>
+	          				<label for="GuestList">Guest List</label>
+	          				<input class="form-control" data-val="true" data-val-required="The Guest List name field is required." id="GuestList" name="GuestList" type="text" value="" placeholder="guest list" autocomplete="on"/>
+	        			</div>
+	        			<div class="form-group" style=color:#fff>
+	          				<label for="MessagetoGuests">Message to Guests</label>
+	          				<input class="form-control" data-val="true" data-val-required="The Message to Guests name field is optional." id="MessagetoGuests" name="MessagetoGuests" type="text" value="" placeholder="message to guests" autocomplete="on"/>
+	        			</div>
+
+	        			<!-- <button type='submit' onsubmit='return onsubmitform()'>Try!</button> -->
+		                    <!-- <p id='demo'></p> -->
+
+		                <button type="submit" class="btn btn-large btn-success">CREATE</button><br />
+
+
+<!-- 						<button type="submit" class="btn btn-large btn-success" >CREATE</button><br />
+ -->
+						
+
 					</form>
 				</div>
 			</div>
@@ -156,25 +155,57 @@
 </section>
 
 <script>
-	$('form').validate({
-		rules: {
-			EventName: {
-				required: true
-			},
-			StartDateTime: {
-				required: true
-			},
-			EndDateTime: {
-				required: true
-			},
-			EventDescription: {
-				required: true
-			},
-			EventLocation: {
-				required: true
-			}			
-		}
-	});
+
+function onsubmitform() {
+	// alert('This form is being submitted, please wait a moment...');
+	var startdate = new Date($('input[name="startdate"]').val());
+	var enddate = new Date($('input[name="enddate"]').val());
+
+	if (startdate.getTime() > enddate.getTime()) {
+		alert('failed validation');
+		return false;
+	}
+}
+
+
+function myDate() {
+	var x = document.getElementById('startdate');
+	var currentVal = x.value;
+// debugger;
+	if (currentVal == '2016/04/03') {
+		document.getElementById('demo').innerHTML = myDate.value;
+		alert(myDate.value);
+	} else {
+		alert(currentVal + 'The dates do not match.');
+	}
+};
+
+// $('form').validate({
+// 	rules: {
+// 		EventType: {
+// 			required: true
+// 		},
+// 		EventName: {
+// 			required: true
+// 		},
+// 		StartDateTime: {
+// 			required: true
+// 		},
+// 		EndDateTime: {
+// 			required: true
+// 		},
+// 		EventHost: {
+// 			required: true
+// 		},
+// 		EventDescription: {
+// 			required: true
+// 		},
+// 		EventLocation: {
+// 			required: true
+// 		}			
+// 	}
+// });
+
 </script>
 </body>
 <div id="footerWrapper" style=color:#fff>

@@ -5,21 +5,12 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Register</title>
 
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-
-	<link rel="stylesheet" href="../stylesheets/register.css">
-	
-	<!-- add support library for latest version of jQuery (for Bootstrap's JavaScript plugins)-->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-
-	<!-- Latest compiled and minified JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-
-	<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.js"></script>
-
-	<!-- // <script src="../js/smoothscroll.js"></script> -->
+	<link rel='stylesheet' href="../node_modules/font-awesome/css/font-awesome.min.css">
+    <link rel='stylesheet' href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+	<script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../node_modules/jquery-validation/dist/jquery.validate.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="../stylesheets/register.css">	
 
 </head>
 <body data-spy="scroll" data-offset="0" data-target="#navigation">
@@ -35,11 +26,11 @@
       <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
           <!-- <li><a href="../index.html">Home</a></li> -->
-          <li><a href="./register.html">Sign-up</a></li>
-          <li><a href="./login.html">Login</a></li>
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./register.html">Register</a></li>
           <li><a href="../events/new_event.html">Create Event</a></li>
-          <!-- <li><a href="../events/events.html">Events</a></li> -->
-          <!-- <li><a href="../account/profile.html">Profile</a></li> -->
+          <li><a href="../events/events.html">Events</a></li>
+          <li><a href="../account/profile.html">Profile</a></li>
           <!-- <li><a href="../events/invitation_form.html">Create Invitations</a></li> -->          
         </ul>
       </div>
@@ -58,59 +49,128 @@
 					<h1>Register</h1>
 				</div>
 		    <div class="col-lg-7">
-					<form action="./register" method="post">
+					<form action="./profile.html" method="post">
 						<div class="validation-summary-valid" data-valmsg-summary="true">
 							<ul>
 								<li style="display:none"></li>
 							</ul>
 						</div>
 						<div class="form-group">
-      				<label for="FirstName">First name</label>
-      				<input class="form-control" data-val="true" data-val-required="The First name field is required." id="FirstName" name="FirstName" type="text" value="" placeholder="first name" required autocomplete="FirstName" />
-	        	</div>
+		      				<label for="FirstName">First name</label>
+		      				<input class="form-control" data-val="true" data-val-required="The First name field is required." id="FirstName" name="FirstName" type="text" value="" placeholder="first name" required autocomplete="on" autofocus/>
+			        	</div>
 						<div class="form-group">
-      				<label for="LastName">Last name</label>
-      				<input class="form-control" data-val="true" data-val-required="The Last name field is required." id="LastName" name="LastName" type="text" value="" placeholder="last name" required autocomplete="LastName" />
-	        	</div>
+		      				<label for="LastName">Last name</label>
+		      				<input class="form-control" data-val="true" data-val-required="The Last name field is required." id="LastName" name="LastName" type="text" value="" placeholder="last name" required autocomplete="on" />
+			        	</div>
 						<div class="form-group">
-      				<label for="Email">Email</label>
-      				<input class="form-control" data-val="true" data-val-email="That&#39;s not a valid email address." data-val-required="The Email field is required." id="Email" name="Email" type="text" value="" placeholder="email" required autocomplete="Email" />
-      			</div>
-	        	<div class="form-group">
-      				<label for="Password">Password</label>
-      				<input class="form-control" data-val="true" data-val-length="The password must be between 4 and 10 characters long." data-val-length-max="10" data-val-length-min="4" data-val-regex="The password cannot contain special characters." data-val-regex-pattern="^([a-zA-Z0-9]+)$" data-val-required="The Password field is required." id="Password" name="Password" onpaste="return false" placeholder="password" type="password" />
-      			</div>
-						<div class="form-group">
-      				<label for="ConfirmPassword">Confirm password</label>
-      				<input class="form-control" data-val="true" data-val-equalto="The password and confirmation password do not match." data-val-equalto-other="*.Password" data-val-required="The Confirm password field is required." id="ConfirmPassword" name="ConfirmPassword" onpaste="return false" type="password" placeholder="confirm password"/>
-      			</div>
-						<button type="submit" class="btn btn-large btn-success">SUBMIT</button>
+		      				<label for="Email">Email</label>
+		      				<input type="email" 
+		      					class="form-control" 
+		      					id="email" name="email" 
+		      					placeholder="me@example.com" 
+		      					required autocomplete="on" onblur="myEmail()"/>
+		      			<div class="invalid">
+		      				The required email address may not include
+		      				any characters other than the '@' sign.
+		      			</div>
+		      			</div>
+			        	<div class="form-group">
+		      				<label for="Password">Password</label>
+		      				<input type="password" class="form-control" title="Six or more characters" required id="Password_id" name="myPassword" onpaste="return false" placeholder="password" onblur="firstPassword()" />
+		      			</div>
+		      			<div class="form-group">
+		      				<label for="ConfirmPassword">Confirm password</label>
+		      				<input class="form-control"  required id="ConfirmPassword" name="ConfirmPassword" onpaste="return false" type="password" placeholder="confirm password" title="The Confirm password field is required." onblur="confirmPassword()"/>
+		      			</div>
+						<input type="submit" value="Submit">
+		      				<script>
+								function myEmail() {
+									var firstEmailInput = document.querySelector('#email').value;
+									var validate = false;
+									for (i = 0; i < firstEmailInput.length; i++) {
+										if (firstEmailInput.charAt(i) === '@') {
+											validate = true;
+										}
+										else {
+											validate = false;
+										}
+									}
+debugger;
+									if (validate === false) {
+										console.log('Missing @!');
+									}
+								}
+
+								function firstPassword() {
+								    var firstPasswordInput = document.querySelector('#Password_id').value;
+								    if (firstPasswordInput.length < 6) {
+								    	alert('length must be greater than 6')
+								    }
+								    else if (firstPasswordInput.length > 10) {
+								    	alert('length must be 10 or less')
+								    }
+
+								    if (!firstPasswordInput.match(/[\!\@\#\$\%\_\^\&\*]/g)) {
+								    	alert('missing special characters!')
+								    }
+
+								    if (!firstPasswordInput.match(/\d/g)) {
+								        alert("missing a number");
+								    }
+
+								    if (!firstPasswordInput.match(/[a-z]/g)) {
+								        alert("missing a lowercase letter");
+								    }
+
+								    if (!firstPasswordInput.match(/[A-Z]/g)) {
+								        alert("missing an uppercase letter");
+								    }
+								}
+								function confirmPassword() {
+								    // alert("Hi!");
+								    // debugger;
+								    var confirmPasswordInput = document.querySelector('#ConfirmPassword').value;
+								    // var confirmPasswordInputValue = confirmPasswordInput.value;
+								    var firstPasswordInput = document.querySelector('#Password_id').value;
+								    // var firstPasswordInputValue = firstPasswordInput.value;
+
+								    if (firstPasswordInput === confirmPasswordInput) {
+								    	alert("The password has been confirmed.");
+								    }
+								    else {
+								    	alert("The password and confirmation password do not match.");
+								    }
+		      					}
+							</script>
+		      			</div>
 					</form>
 				</div>
 			</div>
 		</div>
 	</form>
 	<script>
-	$('form').validate({
-		rules: {
-			FirstName: {
-				required: true
-			},
-			LastName: {
-				required: true
-			},
-			Email: {
-				required: true
-			},
-			Password: {
-				required: true
-			},
-			ConfirmPassword: {
-				required: true
-			}			
-		}
-	});
-</script>
+		$('form').validate({
+			rules: {
+				FirstName: {
+					required: true
+				},
+				LastName: {
+					required: true
+				},
+				Email: {
+					required: true
+				},
+				Password: {
+					required: true
+				},
+				ConfirmPassword: {
+					required: true
+				}			
+			}
+		});
+	</script>
+
 </body>
 <div id="footerWrapper">
   <footer>

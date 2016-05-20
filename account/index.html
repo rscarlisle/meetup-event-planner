@@ -3,26 +3,17 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login</title>
+  <title>Home</title>
 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  
-  <!-- add support library for latest version of jQuery (for Bootstrap's JavaScript plugins)-->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-
-  <!-- Latest compiled and minified JavaScript -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>  
-  <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="../stylesheets/login.css">
+  <link rel='stylesheet' href="../node_modules/font-awesome/css/font-awesome.min.css">
+  <link rel='stylesheet' href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' rel='stylesheet' type='text/css'> 
+  <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
   <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
-	
-  <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.js"></script>
-
-  <!-- enhance-login -->
-	<link rel="stylesheet" href="../stylesheets/login.css">
-
-  <!-- // <script src="../js/smoothscroll.js"></script> -->
+  <script src="../node_modules/jquery-validation/dist/jquery.validate.js"></script>
+  <!-- <script src="../node_modules/google-fonts/..."></script> -->
 
 </head>
 <body data-spy="scroll" data-offset="0" data-target="#navigation">
@@ -38,10 +29,10 @@
       <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
           <!-- <li><a href="../index.html">Home</a></li> -->
-          <li><a href="./register.html">Sign-up</a></li>
-          <li><a href="./login.html">Login</a></li>
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./register.html">Register</a></li>
           <li><a href="../events/new_event.html">Create Event</a></li>
-          <!-- <li><a href="../events/events.html">Events</a></li> -->
+          <li><a href="../events/events.html">Events</a></li>
           <!-- <li><a href="../account/profile.html">Profile</a></li> -->
           <!-- <li><a href="../events/invitation_form.html">Create Invitations</a></li>  -->
         </ul>
@@ -52,10 +43,10 @@
 <div id="login">
   <div class="container">
     <div class="col-lg-12">
-      <h1>Login</h1>
+      <h1>Home</h1>
     </div>
     <div class="col-lg-7">
-      <form action="../account/login.html" method="post">
+      <form action="../events/new_event.html" method="post">
         <div class="validation-summary-valid" data-valmsg-summary="true">
           <ul>
             <li style="display:none"></li>
@@ -63,7 +54,7 @@
         </div> 
         <div class="form-group">
           <label for="email">Email</label>
-          <input class="form-control" data-val="true" data-val-email="The email field is not a valid e-mail address." data-val-required="The Email field is required." id="email" name="email" type="email" value="" placeholder="email" required autocomplete="email" />
+          <input class="form-control" data-val="true" data-val-email="The email field is not a valid e-mail address." data-val-required="The Email field is required." id="email" name="email" type="email" value="" placeholder="email" required autocomplete="on" autofocus/>
         </div>
         <div class="form-group">
           <label for="password">Password</label>
@@ -75,7 +66,7 @@
         <p>
           <a href="/Account/PasswordReset">Forgot your password?</a>
         </p>
-        <button type="submit" class="btn btn-large btn-success">SUBMIT</button>
+        <button type="submit" class="btn btn-large btn-success">GET STARTED</button>
       </form>    
     </div>
   </div>
@@ -89,14 +80,15 @@
       password: {
         required: true
       }
-    },
-      invalidHandler: function(event, validator) {
-        var errors = validator.numberOfInvalids()
-        alert('number of invalid fields' + errors);
-      },
-      submitHandler: function(form) {
-          alert('ajax being called...');
-      }
+    // },
+    //   invalidHandler: function(event, validator) {
+    //     var errors = validator.numberOfInvalids()
+    //     alert('number of invalid fields' + errors);
+    //   },
+    //   submitHandler: function(form) {
+    //       alert('ajax being called...');
+    //   
+    }
   });
 </script>
 </body>
