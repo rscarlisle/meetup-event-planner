@@ -1,6 +1,6 @@
 # Meetup Event Planner
 
-![event_meetup 2017-06-06 at 1 28 36 pm](https://user-images.githubusercontent.com/6508354/26850390-2af0f5ea-4abc-11e7-9799-003023b9f63c.png)
+![event-meetup 2017-06-06 at 1 34 33 pm](https://user-images.githubusercontent.com/6508354/26850619-0969f510-4abd-11e7-9350-30fe84b7faf2.png)
 
 A responsive web application that allows the user to establish a meet-up event.
 
